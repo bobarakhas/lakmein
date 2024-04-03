@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/rippleui@1.12.1/dist/css/styles.css"
+    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#901913",
+              secondary: "#191A1A",
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <title>Lakmē | All Day Base Set</title>
+  </head>
+  <body>
+    <div class="bg-secondary">
+      <!--
+      Mobile menu
+  
+      Off-canvas menu for mobile, show/hide based on off-canvas menu state.
+    -->
+      <div class="relative z-40 lg:hidden" role="dialog" aria-modal="true">
+        <!--
+        Off-canvas menu backdrop, show/hide based on off-canvas menu state.
+  
+        Entering: "transition-opacity ease-linear duration-300"
+          From: "opacity-0"
+          To: "opacity-100"
+        Leaving: "transition-opacity ease-linear duration-300"
+          From: "opacity-100"
+          To: "opacity-0"
+      -->
+      </div>
+
+      <header class="relative bg-secondary">
+        <p
+          class="flex h-10 items-center justify-center bg-primary px-4 text-sm font-medium text-white sm:px-6 lg:px-8"
+        >
+          Get free delivery on orders over $100
+        </p>
+
+        <nav aria-label="Top" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="border-b border-gray-200">
+            <div class="flex h-16 items-center">
+              <!-- Mobile menu toggle, controls the 'mobileMenuOpen' state. -->
+              <button
+                type="button"
+                class="relative rounded-md bg-secondary p-2 text-gray-400 lg:hidden"
+              >
+                <span class="absolute -inset-0.5"></span>
+                <span class="sr-only">Open menu</span>
+                <svg
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                  />
+                </svg>
+              </button>
+
+              <!-- Logo -->
+              <div class="ml-4 flex lg:ml-0">
+                <a href="#">
+                  <img
+                    src="https://www.lakmeindia.com/cdn/shop/files/Lkm1_1_47aec8f4-69ca-4d80-be5f-b941bc1bf140_155x.png"
+                  />
+                </a>
+              </div>
+
+              <!-- Flyout menus -->
+              <div class="hidden lg:ml-8 lg:block lg:self-stretch">
+                <div class="flex h-full space-x-8">
+                  <div class="flex">
+                    <div class="relative flex">
+                      <!-- Item active: "border-indigo-600 text-secondary", Item inactive: "border-transparent text-white hover:text-gray-300" -->
+                      <button
+                        type="button"
+                        class="border-transparent text-white hover:text-gray-300 relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out"
+                        aria-expanded="false"
+                      >
+                        CATEGORIES
+                      </button>
+                    </div>
+
+                    <!--
+                    'Women' flyout menu, show/hide based on flyout menu state.
+  
+                    Entering: "transition ease-out duration-200"
+                      From: "opacity-0"
+                      To: "opacity-100"
+                    Leaving: "transition ease-in duration-150"
+                      From: "opacity-100"
+                      To: "opacity-0"
+                  --></div>
+                  <div class="flex">
+                    <div class="relative flex">
+                      <!-- Item active: "border-indigo-600 text-secondary", Item inactive: "border-transparent text-white hover:text-gray-300" -->
+                      <button
+                        type="button"
+                        class="border-transparent text-white hover:text-gray-300 relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out"
+                        aria-expanded="false"
+                      >
+                        TRENDING NOW
+                      </button>
+                    </div>
+
+                    <!--
+                    'Men' flyout menu, show/hide based on flyout menu state.
+  
+                    Entering: "transition ease-out duration-200"
+                      From: "opacity-0"
+                      To: "opacity-100"
+                    Leaving: "transition ease-in duration-150"
+                      From: "opacity-100"
+                      To: "opacity-0"
+                  --></div>
+
+                  <a
+                    href="#"
+                    class="flex items-center text-sm font-medium text-white hover:text-gray-300"
+                    >COMBOS</a
+                  >
+                  <a
+                    href="#"
+                    class="flex items-center text-sm font-medium text-white hover:text-gray-300"
+                    >BLOG</a
+                  >
+                </div>
+              </div>
+
+              <div class="ml-auto flex items-center">
+                <div
+                  class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6"
+                >
+                  <a
+                    href="#"
+                    class="text-sm font-medium text-white hover:text-gray-300"
+                    >Sign in</a
+                  >
+                  <span class="h-6 w-px bg-gray-200" aria-hidden="true"></span>
+                </div>
+
+                <!-- Search -->
+                <div class="flex lg:ml-6">
+                  <a href="#" class="p-2 text-gray-400 hover:text-gray-500">
+                    <span class="sr-only">Search</span>
+                    <svg
+                      class="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+
+                <!-- Cart -->
+                <div class="ml-4 flow-root lg:ml-6">
+                  <a href="#" class="group -m-2 flex items-center p-2">
+                    <svg
+                      class="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                      />
+                    </svg>
+                    <span
+                      class="ml-2 text-sm font-medium text-white group-hover:text-gray-300"
+                      >0</span
+                    >
+                    <span class="sr-only">items in cart, view bag</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </div>
+
+    <div class="bg-white">
+      <div class="pt-6">
+        <nav aria-label="Breadcrumb">
+          <ol
+            role="list"
+            class="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8"
+          >
+            <li>
+              <div class="flex items-center">
+                <a href="#" class="mr-2 text-sm font-medium text-gray-900"
+                  >Home</a
+                >
+                <svg
+                  width="16"
+                  height="20"
+                  viewBox="0 0 16 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  class="h-5 w-4 text-gray-300"
+                >
+                  <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
+                </svg>
+              </div>
+            </li>
+            <li>
+              <div class="flex items-center">
+                <a href="#" class="mr-2 text-sm font-medium text-gray-900"
+                  >Value Sets & Combos</a
+                >
+                <svg
+                  width="16"
+                  height="20"
+                  viewBox="0 0 16 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  class="h-5 w-4 text-gray-300"
+                >
+                  <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
+                </svg>
+              </div>
+            </li>
+
+            <li class="text-sm">
+              <a
+                href="#"
+                aria-current="page"
+                class="font-medium text-gray-500 hover:text-gray-600"
+                >All Day Base Set</a
+              >
+            </li>
+          </ol>
+        </nav>
+
+        <!-- Image gallery -->
+        <div id="controls-carousel" class="md:hidden relative w-full" data-carousel="static">
+          <!-- Carousel wrapper -->
+          <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+              <!-- Item 1 -->
+              <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                  <img src="https://www.lakmeindia.com/cdn/shop/products/AllBaseSet_1000x.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+              </div>
+              <!-- Item 2 -->
+              <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                  <img src="https://www.lakmeindia.com/cdn/shop/products/sp_9b16f414-8523-47a7-ba4d-e3b17177246a_1000x.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+              </div>
+              <!-- Item 3 -->
+              <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                  <img src="https://www.lakmeindia.com/cdn/shop/products/foundation-hero_365430e7-4fa6-4982-8eaa-f81b22fa876e_1000x.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+              </div>
+              <!-- Item 4 -->
+              <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                  <img src="https://www.lakmeindia.com/cdn/shop/products/concelaer_1000x.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+              </div>
+              <!-- Item 5 -->
+              <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                  <img src="https://www.lakmeindia.com/cdn/shop/products/payoff-sp_af83215b-93bc-474a-99d4-86654d0a41cf_1000x.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+              </div>
+              <!-- Item 6 -->
+              <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                  <img src="https://www.lakmeindia.com/cdn/shop/products/payoff-conc_1000x.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+              </div>
+              <!-- Item 7 -->
+              <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                  <img src="https://www.lakmeindia.com/cdn/shop/products/Nick_9to5_SpraySwatchbenefits_1000x.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+              </div>
+              <!-- Item 8 -->
+              <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                  <img src="https://www.lakmeindia.com/cdn/shop/products/lifestyle_foundation_32171863-c357-448f-bf86-3f8b9fab1dc0_1000x.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+              </div>
+              <!-- Item 9 -->
+              <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                  <img src="https://www.lakmeindia.com/cdn/shop/products/swatch-sp_62a0c1d3-2270-48df-a6cd-49f4687825b0_1000x.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+              </div>
+              <!-- Item 10 -->
+              <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                  <img src="https://www.lakmeindia.com/cdn/shop/products/lifestyle-conc_1000x.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+              </div>
+          </div>
+          <!-- Slider controls -->
+          <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+              <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                  <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                  </svg>
+                  <span class="sr-only">Previous</span>
+              </span>
+          </button>
+          <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+              <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                  <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                  </svg>
+                  <span class="sr-only">Next</span>
+              </span>
+          </button>
+        </div>
+
+
+
+
+        <div
+          class="hidden sm:grid mx-auto mt-6 max-w-2xl sm:px-6 lg:grid-cols-4 lg:max-w-7xl lg:gap-x-8 lg:px-8"
+        >
+          <div
+            class="aspect-h-4 aspect-w-3 hidden overflow-hidden rounded-lg lg:block"
+          >
+            <img
+              src="https://www.lakmeindia.com/cdn/shop/products/AllBaseSet_1000x.jpg"
+              class="w-full object-cover object-center"
+            />
+          </div>
+          <div class="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
+            <img
+              src="https://www.lakmeindia.com/cdn/shop/products/sp_9b16f414-8523-47a7-ba4d-e3b17177246a_1000x.jpg"
+              class="w-full object-cover object-center"
+            />
+          </div>
+          <div class="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
+            <img
+              src="https://www.lakmeindia.com/cdn/shop/products/concelaer_1000x.jpg"
+              class="w-full object-cover object-center"
+            />
+          </div>
+          <div
+            class="aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg"
+          >
+            <img
+              src="https://www.lakmeindia.com/cdn/shop/products/payoff-sp_af83215b-93bc-474a-99d4-86654d0a41cf_1000x.jpg"
+              class="w-full object-cover object-center"
+            />
+          </div>
+        </div>
+
+        <!-- Product info -->
+        <div
+          class="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-16"
+        >
+          <div class="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
+            <h1
+              class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl"
+            >
+              ALL DAY BASE SET
+            </h1>
+          </div>
+
+          <!-- Options -->
+          <div class="mt-4 lg:row-span-3 lg:mt-0">
+            <h2 class="sr-only">Product information</h2>
+            <div class="flex flex-row gap-2 justify-start items-end">
+              <p class="text-xl tracking-tight text-primary line-through">
+                &#8377;1,299
+              </p>
+              <p class="text-3xl tracking-tight text-gray-800">&#8377;1</p>
+            </div>
+
+            <!-- Reviews -->
+            <div class="mt-6">
+              <h3 class="sr-only">Reviews</h3>
+              <div class="flex items-center">
+                <div class="flex items-center">
+                  <!-- Active: "text-gray-900", Default: "text-gray-200" -->
+                  <svg
+                    class="text-gray-900 h-5 w-5 flex-shrink-0"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <svg
+                    class="text-gray-900 h-5 w-5 flex-shrink-0"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <svg
+                    class="text-gray-900 h-5 w-5 flex-shrink-0"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <svg
+                    class="text-gray-900 h-5 w-5 flex-shrink-0"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <svg
+                    class="text-gray-200 h-5 w-5 flex-shrink-0"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <p class="sr-only">4 out of 5 stars</p>
+                <a
+                  href="#"
+                  class="ml-3 text-sm font-medium text-secondary hover:text-indigo-500"
+                  >117 reviews</a
+                >
+              </div>
+            </div>
+
+            <!-- Colors -->
+            <div>
+              <h3 class="text-sm font-medium text-gray-900">Shades</h3>
+
+              <fieldset class="mt-4">
+                <legend class="sr-only">Choose a shade</legend>
+                <div class="flex items-center space-x-3">
+                  <!--
+                  Active and Checked: "ring ring-offset-1"
+                  Not Active and Checked: "ring-2"
+                -->
+                  <label
+                    class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none ring-gray-400"
+                  >
+                    <input
+                      type="radio"
+                      name="color-choice"
+                      value="Ivory"
+                      class="sr-only"
+                      aria-labelledby="color-choice-0-label"
+                    />
+                    <span id="color-choice-0-label" class="sr-only"
+                      >Ivory</span
+                    >
+                    <span
+                      aria-hidden="true"
+                      class="h-8 w-8 bg-[#EAB091] rounded-sm border border-black border-opacity-10"
+                    ></span>
+                  </label>
+                  <!--
+                  Active and Checked: "ring ring-offset-1"
+                  Not Active and Checked: "ring-2"
+                -->
+                  <label
+                    class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none ring-gray-400"
+                  >
+                    <input
+                      type="radio"
+                      name="color-choice"
+                      value="Biege"
+                      class="sr-only"
+                      aria-labelledby="color-choice-1-label"
+                    />
+                    <span id="color-choice-1-label" class="sr-only"
+                      >Biege</span
+                    >
+                    <span
+                      aria-hidden="true"
+                      class="h-8 w-8 bg-[#C7936E] rounded-sm border border-black border-opacity-10"
+                    ></span>
+                  </label>
+                  <!--
+                  Active and Checked: "ring ring-offset-1"
+                  Not Active and Checked: "ring-2"
+                -->
+                  <label
+                    class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none ring-gray-900"
+                  >
+                    <input
+                      type="radio"
+                      name="color-choice"
+                      value="Cinnamon"
+                      class="sr-only"
+                      aria-labelledby="color-choice-2-label"
+                    />
+                    <span id="color-choice-2-label" class="sr-only"
+                      >Cinnamon</span
+                    >
+                    <span
+                      aria-hidden="true"
+                      class="h-8 w-8 bg-[#CA8C63] rounded-sm border border-black border-opacity-10"
+                    ></span>
+                  </label>
+
+                  <label
+                    class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none ring-gray-400"
+                  >
+                    <input
+                      type="radio"
+                      name="color-choice"
+                      value="Almond"
+                      class="sr-only"
+                      aria-labelledby="color-choice-1-label"
+                    />
+                    <span id="color-choice-1-label" class="sr-only"
+                      >Almond</span
+                    >
+                    <span
+                      aria-hidden="true"
+                      class="h-8 w-8 bg-[#AB7459] rounded-sm border border-black border-opacity-10"
+                    ></span>
+                  </label>
+
+                  <label
+                    class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none ring-gray-400"
+                  >
+                    <input
+                      type="radio"
+                      name="color-choice"
+                      value="Walnut"
+                      class="sr-only"
+                      aria-labelledby="color-choice-1-label"
+                    />
+                    <span id="color-choice-1-label" class="sr-only"
+                      >Walnut</span
+                    >
+                    <span
+                      aria-hidden="true"
+                      class="h-8 w-8 bg-[#9A705A] rounded-sm border border-black border-opacity-10"
+                    ></span>
+                  </label>
+                </div>
+              </fieldset>
+            </div>
+
+            <!-- Sizes -->
+            <div class="mt-10">
+              <div class="flex items-center justify-between">
+                <h3 class="text-sm font-medium text-gray-900">
+                  Choose your Lakmē 9to5 Primer + Matte Liquid Concealer
+                </h3>
+              </div>
+
+              <select id="shade0"
+                class="select bg-white text-secondary max-w-full my-2 rounded-md"
+              >
+                <option
+                  value=""
+                  selected="selected"
+                  disabled="disabled"
+                >
+                  Select shade
+                </option>
+                <option value="Ivory">Ivory</option>
+                <option disabled="disabled">Sand</option>
+                <option value="Nude">Nude</option>
+                <option value="Beige">Beige</option>
+                <option value="Cinnamon">Cinnamon</option>
+                <option value="Almond">Almond</option>
+                <option value="Walnut">Walnut</option>
+                <option disabled="disabled">Cocoa</option>
+              </select>
+            </div>
+
+            <div class="mt-5">
+              <div class="flex items-center justify-between">
+                <h3 class="text-sm font-medium text-gray-900">
+                  Choose your Lakmē 9 to 5 Primer + Matte Perfect Cover
+                  Foundation
+                </h3>
+              </div>
+
+              <select id="shade1"
+                class="select bg-white text-secondary max-w-full my-2 rounded-md"
+              >
+                <option
+                  value=""
+                  selected="selected"
+                  disabled="disabled"
+                >
+                  Select shade
+                </option>
+                <option disabled="disabled">C100 Cool Ivory</option>
+                <option value="W120 Warm Crème">W120 Warm Crème</option>
+                <option value="C140 Cool Rose">C140 Cool Rose</option>
+                <option value="W160 Warm Sand">W160 Warm Sand</option>
+                <option disabled="disabled">W180 Warm Natural</option>
+                <option value="N200 Neutral Nude">N200 Neutral Nude</option>
+                <option value="N220 Neutral Medium">
+                  N220 Neutral Medium
+                </option>
+                <option value="W240 Warm Beige">W240 Warm Beige</option>
+                <option value="N260 Neutral Honey">N260 Neutral Honey</option>
+                <option value="C280 Cool Tan">C280 Cool Tan</option>
+                <option value="C300 Cool Cinnamon">C300 Cool Cinnamon</option>
+                <option value="W320 Warm Caramel">W320 Warm Caramel</option>
+                <option value="N340 Neutral Almond">
+                  N340 Neutral Almond
+                </option>
+                <option value="N360 Neutral Chestnut">
+                  N360 Neutral Chestnut
+                </option>
+                <option value="C390 Cool Cocoa">C390 Cool Cocoa</option>
+                <option value="C380 Cool Walnut">C380 Cool Walnut</option>
+                <option value="W110 Warm Light">W110 Warm Light</option>
+                <option value="N150 Neutral Light">N150 Neutral Light</option>
+                <option value="W230 Warm Wood">W230 Warm Wood</option>
+                <option disabled="disabled">C330 Cool Mocha</option>
+              </select>
+            </div>
+
+            <div class="mt-5">
+              <div class="flex items-center justify-between">
+                <h3 class="text-sm font-medium text-gray-900">
+                  Choose your Lakmē Absolute Made to Last Setting Spray 60ml
+                </h3>
+              </div>
+
+              <select
+                class="select bg-white text-secondary max-w-full my-2 rounded-md"
+              >
+                <option value="Primer">Primer</option>
+              </select>
+            </div>
+
+            <button id="continueBtn"
+              type="submit"
+              class="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-primary px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            >
+              Buy now
+            </button>
+          </div>
+
+          <script>
+            var shade0 = document.getElementById('shade0');
+            var shade1 = document.getElementById('shade1');
+            var continueBtn = document.getElementById('continueBtn');
+
+            continueBtn.addEventListener('click', () => {
+              if (shade0.value == '' || shade1.value == '') {
+                return;
+              } else {
+                sessionStorage.setItem('shade0', shade0.value);
+                sessionStorage.setItem('shade1', shade1.value);
+                window.location.href = '/lakmeinfe/checkout.html';
+              }
+            })
+          </script>
+
+          <div
+            class="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6"
+          >
+            <!-- Description and details -->
+            <div>
+              <h3 class="sr-only">Description</h3>
+
+              <div class="space-y-6">
+                <p class="text-base text-gray-900">
+                  Experience a seamless and long-lasting makeup application with
+                  the Lakmē All Day Base Set. Meticulously curated, this
+                  ensemble features Lakmē's signature 9 to 5 Primer + Matte
+                  Liquid Concealer and Primer + Matte Perfect Cover Foundation,
+                  complemented by the Lakmē Absolute Made to Last Setting Spray.
+                  Crafted to offer impeccable coverage and a radiant complexion
+                  that endures all day, this collection is your go-to solution
+                  for flawless makeup.
+                </p>
+              </div>
+            </div>
+
+            <div class="mt-10">
+              <h3 class="text-sm font-medium text-gray-900">Highlights</h3>
+
+              <div class="mt-4">
+                <ul role="list" class="list-disc space-y-2 pl-4 text-sm">
+                  <li class="text-gray-400">
+                    <span class="text-gray-600"
+                      >Includes 9 to 5 Primer + Matte Concealer, Primer + Matte
+                      Foundation, and Absolute Made to Last Setting Spray.</span
+                    >
+                  </li>
+                  <li class="text-gray-400">
+                    <span class="text-gray-600"
+                      >Achieves flawless coverage and lasting radiance.</span
+                    >
+                  </li>
+                  <li class="text-gray-400">
+                    <span class="text-gray-600"
+                      >Features lightweight formulas and a range of shades to
+                      suit various skin tones.
+                    </span>
+                  </li>
+                  <li class="text-gray-400">
+                    <span class="text-gray-600"
+                      >Setting spray ensures makeup stays fresh for up to 16
+                      hours.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="mt-10">
+              <h2 class="text-sm font-medium text-gray-900">Details</h2>
+
+              <div class="mt-4 space-y-6">
+                <p class="text-sm text-gray-600">
+                  Elevate your makeup game with the Lakmē All Day Base Set. This
+                  curated collection includes Lakmē's 9 to 5 Primer + Matte
+                  Liquid Concealer, Primer + Matte Perfect Cover Foundation, and
+                  Lakmē Absolute Made to Last Setting Spray. Achieve flawless
+                  coverage and lasting radiance with the concealer's lightweight
+                  formula, foundation's pore-blurring effect, and the setting
+                  spray's 16-hour hold. Choose from a range of shades tailored
+                  to suit various skin tones. Experience enduring beauty with
+                  Lakmē's All Day Base Set.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-secondary shadow p-4">
+      <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+        <div class="sm:flex sm:items-center sm:justify-between">
+          <a
+            href="https://flowbite.com/"
+            class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
+          >
+            <img
+              src="https://www.lakmeindia.com/cdn/shop/files/Lkm1_1_47aec8f4-69ca-4d80-be5f-b941bc1bf140_155x.png"
+              class="h-8"
+              alt="Flowbite Logo"
+            />
+          </a>
+          <ul
+            class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400"
+          >
+            <li>
+              <a href="#" class="hover:underline me-4 md:me-6">About</a>
+            </li>
+            <li>
+              <a href="#" class="hover:underline me-4 md:me-6"
+                >Privacy Policy</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
+            </li>
+            <li>
+              <a href="#" class="hover:underline">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <hr
+          class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"
+        />
+        <span
+          class="block text-sm text-gray-500 sm:text-center dark:text-gray-400"
+          >© 2024
+          <a href="https://flowbite.com/" class="hover:underline">LAKMĒ™</a>.
+          All Rights Reserved.</span
+        >
+      </div>
+    </footer>
+  </body>
+</html>

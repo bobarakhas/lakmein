@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/rippleui@1.12.1/dist/css/styles.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#901913",
+              secondary: "#191A1A",
+            },
+          },
+        },
+      };
+    </script>
+    <title>Lakmē | All Day Base Set</title>
+  </head>
+  <body class="bg-white">
+    <div class="bg-secondary">
+      <!--
+        Mobile menu
+    
+        Off-canvas menu for mobile, show/hide based on off-canvas menu state.
+      -->
+      <div class="relative z-40 lg:hidden" role="dialog" aria-modal="true">
+        <!--
+          Off-canvas menu backdrop, show/hide based on off-canvas menu state.
+    
+          Entering: "transition-opacity ease-linear duration-300"
+            From: "opacity-0"
+            To: "opacity-100"
+          Leaving: "transition-opacity ease-linear duration-300"
+            From: "opacity-100"
+            To: "opacity-0"
+        -->
+        
+      </div>
+
+      <header class="relative bg-secondary">
+        <p
+          class="flex h-10 items-center justify-center bg-primary px-4 text-sm font-medium text-white sm:px-6 lg:px-8"
+        >
+          Get free delivery on orders over $100
+        </p>
+
+        <nav aria-label="Top" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="border-b border-gray-200">
+            <div class="flex h-16 items-center">
+              <!-- Mobile menu toggle, controls the 'mobileMenuOpen' state. -->
+              <button
+                type="button"
+                class="relative rounded-md bg-secondary p-2 text-gray-400 lg:hidden"
+              >
+                <span class="absolute -inset-0.5"></span>
+                <span class="sr-only">Open menu</span>
+                <svg
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                  />
+                </svg>
+              </button>
+
+              <!-- Logo -->
+              <div class="ml-4 flex lg:ml-0">
+                <a href="#">
+                  <img
+                    src="https://www.lakmeindia.com/cdn/shop/files/Lkm1_1_47aec8f4-69ca-4d80-be5f-b941bc1bf140_155x.png"
+                  />
+                </a>
+              </div>
+
+              <!-- Flyout menus -->
+              <div class="hidden lg:ml-8 lg:block lg:self-stretch">
+                <div class="flex h-full space-x-8">
+                  <div class="flex">
+                    <div class="relative flex">
+                      <!-- Item active: "border-indigo-600 text-secondary", Item inactive: "border-transparent text-white hover:text-gray-300" -->
+                      <button
+                        type="button"
+                        class="border-transparent text-white hover:text-gray-300 relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out"
+                        aria-expanded="false"
+                      >
+                        CATEGORIES
+                      </button>
+                    </div>
+
+                    <!--
+                      'Women' flyout menu, show/hide based on flyout menu state.
+    
+                      Entering: "transition ease-out duration-200"
+                        From: "opacity-0"
+                        To: "opacity-100"
+                      Leaving: "transition ease-in duration-150"
+                        From: "opacity-100"
+                        To: "opacity-0"
+                    -->
+                  </div>
+                  <div class="flex">
+                    <div class="relative flex">
+                      <!-- Item active: "border-indigo-600 text-secondary", Item inactive: "border-transparent text-white hover:text-gray-300" -->
+                      <button
+                        type="button"
+                        class="border-transparent text-white hover:text-gray-300 relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out"
+                        aria-expanded="false"
+                      >
+                        TRENDING NOW
+                      </button>
+                    </div>
+
+                    <!--
+                      'Men' flyout menu, show/hide based on flyout menu state.
+    
+                      Entering: "transition ease-out duration-200"
+                        From: "opacity-0"
+                        To: "opacity-100"
+                      Leaving: "transition ease-in duration-150"
+                        From: "opacity-100"
+                        To: "opacity-0"
+                    -->
+                  </div>
+
+                  <a
+                    href="#"
+                    class="flex items-center text-sm font-medium text-white hover:text-gray-300"
+                    >COMBOS</a
+                  >
+                  <a
+                    href="#"
+                    class="flex items-center text-sm font-medium text-white hover:text-gray-300"
+                    >BLOG</a
+                  >
+                </div>
+              </div>
+
+              <div class="ml-auto flex items-center">
+                <div
+                  class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6"
+                >
+                  <a
+                    href="#"
+                    class="text-sm font-medium text-white hover:text-gray-300"
+                    >Sign in</a
+                  >
+                  <span class="h-6 w-px bg-gray-200" aria-hidden="true"></span>
+                </div>
+
+                <!-- Search -->
+                <div class="flex lg:ml-6">
+                  <a href="#" class="p-2 text-gray-400 hover:text-gray-500">
+                    <span class="sr-only">Search</span>
+                    <svg
+                      class="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+
+                <!-- Cart -->
+                <div class="ml-4 flow-root lg:ml-6">
+                  <a href="#" class="group -m-2 flex items-center p-2">
+                    <svg
+                      class="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                      />
+                    </svg>
+                    <span
+                      class="ml-2 text-sm font-medium text-white group-hover:text-gray-300"
+                      >5</span
+                    >
+                    <span class="sr-only">items in cart, view bag</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    <div
+      class="flex flex-col items-center border-b bg-white py-4 sm:flex-row sm:px-10 lg:px-20 xl:px-32"
+    >
+      <div class="mt-4 py-2 text-xs sm:mt-0 sm:ml-auto sm:text-base">
+        <div class="relative">
+          <ul
+            class="relative flex w-full items-center justify-between space-x-2 sm:space-x-4"
+          >
+            <li class="flex items-center space-x-3 text-left sm:space-x-4">
+              <a
+                class="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-200 text-xs font-semibold text-black text-emerald-700"
+                href="#"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5 13l4 4L19 7"
+                  /></svg></a>
+              <span class="font-semibold text-black text-gray-900">Shop</span>
+            </li>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4 text-gray-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+            <li class="flex items-center space-x-3 text-left sm:space-x-4">
+                <a
+                class="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-200 text-xs font-semibold text-black text-emerald-700"
+                href="#"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5 13l4 4L19 7"
+                  /></svg></a>
+              <span class="font-semibold text-black text-gray-900"
+                >Shipping &amp; Payment</span
+              >
+            </li>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4 text-gray-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+            <li class="flex items-center space-x-3 text-left sm:space-x-4">
+                <a
+                class="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-200 text-xs font-semibold text-black text-emerald-700"
+                href="#"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5 13l4 4L19 7"
+                  /></svg></a>
+              <span class="font-semibold text-black text-gray-500"
+                >Confirmation</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col bg-gray-50 px-4 py-5 lg:mt-0 border-b border-b-1">
+        <div class="alert alert-success mb-10">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M24 4C12.96 4 4 12.96 4 24C4 35.04 12.96 44 24 44C35.04 44 44 35.04 44 24C44 12.96 35.04 4 24 4ZM18.58 32.58L11.4 25.4C10.62 24.62 10.62 23.36 11.4 22.58C12.18 21.8 13.44 21.8 14.22 22.58L20 28.34L33.76 14.58C34.54 13.8 35.8 13.8 36.58 14.58C37.36 15.36 37.36 16.62 36.58 17.4L21.4 32.58C20.64 33.36 19.36 33.36 18.58 32.58Z" fill="#00BA34" />
+            </svg>
+            <div class="flex flex-col">
+                <span>Order Confirmed</span>
+                <span class="text-content2">Your order has been placed successfully. You will recieve an email shortly.</span>
+            </div>
+        </div>
+        <div class="change flex-col">
+            <p class="text-xl font-medium text-black">Shipping Details</p>
+            <p id="name" class="text-gray-400"></p>
+            <p id="phone" class="text-gray-400"></p>
+            <p id="email" class="text-gray-400"></p>
+            <p id="address1" class="text-gray-400"></p>
+            <p id="address2" class="text-gray-400"></p>
+            <p id="fullAddress" class="text-gray-400"></p>
+        </div>
+    </div>
+    <div class="grid sm:px-10 lg:grid-cols-2 lg:px-20 xl:px-32">
+      <div class="px-4 pt-8">
+        <p class="text-xl font-medium text-black">Order Summary</p>
+        <p class="text-gray-400">
+          Your order contains these products.
+        </p>
+        <div
+          class="mt-8 space-y-3 rounded-lg border bg-white px-2 py-4 sm:px-6"
+        >
+          <div class="flex flex-col rounded-lg bg-white sm:flex-row">
+            <img
+              class="m-2 h-24 w-28 rounded-md border object-cover object-center"
+              src="https://cdn.shopify.com/s/files/1/0014/3514/0183/products/LakmeAbsoluteBlurPerfectPrimer_0194733a-3433-4de0-b51c-fced6ee71032_small.jpg?v=1663055515"
+              alt=""
+            />
+            <div class="flex w-full flex-col px-4 py-4 justify-between">
+              <span class="font-semibold text-black"
+                >Lakmē Absolute Blur Perfect Primer 1.5 gm</span
+              >
+              <p class="text-lg font-bold text-black">Free</p>
+            </div>
+          </div>
+          <div class="flex flex-col rounded-lg bg-white sm:flex-row">
+            <img
+              class="m-2 h-24 w-28 rounded-md border object-cover object-center"
+              src="https://cdn.shopify.com/s/files/1/0014/3514/0183/files/WhatsAppImage2021-12-20at4.48.32PM_small.jpg?v=1683281368"
+              alt=""
+            />
+            <div class="flex w-full flex-col px-4 py-4">
+              <span class="font-semibold text-black">Makeup Brush</span>
+              <p class="mt-auto text-lg font-bold text-black">Free</p>
+            </div>
+          </div>
+          <div class="flex flex-col rounded-lg bg-white sm:flex-row">
+            <img
+              class="m-2 h-24 w-28 rounded-md border object-cover object-center"
+              src="https://cdn.shopify.com/s/files/1/0014/3514/0183/products/29204_H1-8901030867583_7b1b3e84-8898-4c8a-9fee-8faa598ca40e_small.jpg?v=1653656911"
+              alt=""
+            />
+            <div class="flex w-full flex-col px-4 py-4">
+              <span class="font-semibold text-black"
+                >Lakmē Absolute Made to Last Setting Spray 60ml</span
+              >
+              <span class="float-right text-gray-400">Primer</span>
+              <p class="mt-auto text-lg font-bold text-black">&#8377;489.00</p>
+            </div>
+          </div>
+          <div class="flex flex-col rounded-lg bg-white sm:flex-row">
+            <img
+              class="m-2 h-24 w-28 rounded-md border object-cover object-center"
+              src="https://cdn.shopify.com/s/files/1/0014/3514/0183/products/24456_S1-8901030742750_97cebebf-fa0f-4544-ad92-bdc865638bd3_small.jpg?v=1668858512"
+              alt=""
+            />
+            <div class="flex w-full flex-col px-4 py-4">
+              <span class="font-semibold text-black"
+                >Lakmē 9 to 5 Primer + Matte Perfect Cover Foundation</span
+              >
+              <span id="shade0" class="float-right text-gray-400">[SELECTION]</span>
+              <p class="mt-auto text-lg font-bold text-black">&#8377;440.00</p>
+            </div>
+          </div>
+          <div class="flex flex-col rounded-lg bg-white sm:flex-row">
+            <img
+              class="m-2 h-24 w-28 rounded-md border object-cover object-center"
+              src="https://cdn.shopify.com/s/files/1/0014/3514/0183/products/CONCEALERchestnut_fop_swatch_5b358573-8884-463d-bd9c-b1b2c347e64f_small.jpg?v=1653656826"
+              alt=""
+            />
+            <div class="flex w-full flex-col px-4 py-4">
+              <span class="font-semibold text-black"
+                >Lakmē 9to5 Primer + Matte Liquid Concealer</span
+              >
+              <span id="shade1" class="float-right text-gray-400">[SELECTION]</span>
+              <p class="mt-auto text-lg font-bold text-black">&#8377;370.00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <div class="flex flex-col bg-gray-50 px-4 py-5 lg:mt-0">
+            <div class="change flex-col">
+                <p class="text-xl font-medium text-black">Billing Details</p>
+                <div class="flex flex-col gap-3 my-3">
+                    <!-- Total -->
+                    <div class="mt-6 border-b py-2">
+                        <div class="flex items-center justify-between">
+                        <p class="text-sm font-medium text-black text-gray-900">
+                            Subtotal
+                        </p>
+                        <p class="font-semibold text-black text-gray-900">&#8377;1,299.00</p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                        <p class="text-sm font-medium text-black text-gray-900">
+                            Shipping
+                        </p>
+                        <p class="font-semibold text-black text-gray-900">&#8377;60.00</p>
+                        </div>
+                        <div class="flex items-center justify-between mt-2">
+                            <p class="text-sm font-medium text-black text-gray-900">
+                            Discount (-99%)
+                            </p>
+                            <p class="font-semibold text-black text-green-700">- &#8377;1,289.00</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex items-center justify-between">
+                        <p class="text-sm font-medium text-black text-gray-900">Total</p>
+                        <p class="text-2xl font-semibold text-black text-gray-900">
+                            &#8377;61.00
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <footer class="bg-secondary shadow p-4 mt-10">
+        <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+          <div class="sm:flex sm:items-center sm:justify-between">
+            <a
+              href="https://flowbite.com/"
+              class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
+            >
+              <img
+                src="https://www.lakmeindia.com/cdn/shop/files/Lkm1_1_47aec8f4-69ca-4d80-be5f-b941bc1bf140_155x.png"
+                class="h-8"
+                alt="Flowbite Logo"
+              />
+            </a>
+            <ul
+              class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400"
+            >
+              <li>
+                <a href="#" class="hover:underline me-4 md:me-6">About</a>
+              </li>
+              <li>
+                <a href="#" class="hover:underline me-4 md:me-6"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
+              </li>
+              <li>
+                <a href="#" class="hover:underline">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <hr
+            class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"
+          />
+          <span
+            class="block text-sm text-gray-500 sm:text-center dark:text-gray-400"
+            >© 2024
+            <a href="https://flowbite.com/" class="hover:underline">LAKMĒ™</a>.
+            All Rights Reserved.</span
+          >
+        </div>
+      </footer>
+
+
+
+
+      <script>
+        var name = document.getElementById('name');
+        var phone = document.getElementById('phone');
+        var email = document.getElementById('email');
+        var address1 = document.getElementById('address1');
+        var address2 = document.getElementById('address2');
+        var fullAddress = document.getElementById('fullAddress');
+
+        console.log(sessionStorage.getItem('sendData'))
+
+        window.onload = () => {
+            name.innerHtml = sessionStorage.getItem('fname') + ' ' + sessionStorage.getItem('lname');
+            phone.innerHtml = '+91' + sessionStorage.getItem('phone');
+            email.innerHtml = sessionStorage.getItem('email');
+            address1.innerHtml = sessionStorage.getItem('address1') + ',';
+            address2.innerHtml = sessionStorage.getItem('address2') + ','
+            fullAddress.innerHtml = sessionStorage.getItem('billingState') + ' ' + sessionStorage.getItem('billingZip');
+        }
+      </script>
+  </body>
+</html>
